@@ -1,116 +1,196 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jyoti Gruh Udhyog Poster Maker</title>
+<title>Jyoti Gruh Udhyog • Premium Poster Maker</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090705;color:#f4dfb0;font-family:Georgia,serif}
-header{text-align:center;padding:18px;background:#0b0806;border-bottom:1px solid #8c6115}
-header b{font-size:25px;color:#e9ad27} header small{display:block;letter-spacing:2px;margin-top:5px;color:#c7ad7b}
-.wrap{max-width:1100px;margin:auto;padding:14px;display:grid;grid-template-columns:340px 1fr;gap:16px}
-.panel{background:#100b07;border:1px solid #704c12;border-radius:16px;padding:16px}
-h2{font-size:17px;color:#e7a91e;margin:5px 0 14px}
-label{display:block;font-size:12px;margin:12px 0 6px;color:#cdb889}
-input{width:100%;padding:12px;border-radius:9px;border:1px solid #624719;background:#0b0907;color:#f8e7c0;font-size:15px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-button{width:100%;padding:13px;border-radius:10px;font-weight:800;border:1px solid #8f6417;cursor:pointer}
-.gold{background:linear-gradient(#e9b130,#9a6208);color:#160d03}.dark{background:#19110b;color:#e8c982}
-.upload{padding:18px;border:1px dashed #c99521;border-radius:10px;text-align:center;cursor:pointer}
-#canvas{width:min(100%,700px);height:auto;border:1px solid #8c6417;box-shadow:0 15px 50px #000}
-.preview{display:flex;justify-content:center}.note{font:12px Arial;color:#9f8e70;line-height:1.5;margin-top:8px}
-.status{font:12px Arial;color:#e2b33d;margin:9px 0;min-height:16px}
-@media(max-width:800px){.wrap{grid-template-columns:1fr}.preview{order:-1}}
+:root{--gold:#d8a42a;--gold2:#f4d98d;--dark:#080605;--panel:#100b08;--line:#674711}
+*{box-sizing:border-box}
+body{margin:0;background:#070504;color:#f3dfae;font-family:Georgia,"Times New Roman",serif}
+header{background:linear-gradient(180deg,#120c07,#080604);border-bottom:1px solid #7e5814;padding:18px;text-align:center}
+.logo{font-size:28px;font-weight:900;color:var(--gold2);text-shadow:0 2px 0 #6b4308,0 0 12px #8b5b0b}
+.logo:before{content:"🪔";font-size:26px;margin-right:8px}
+.tag{font-size:11px;letter-spacing:3px;color:#bca77b;margin-top:4px}
+.app{max-width:1180px;margin:auto;padding:16px;display:grid;grid-template-columns:350px 1fr;gap:18px}
+.panel{background:linear-gradient(145deg,#140d08,#080605);border:1px solid #765316;border-radius:18px;padding:18px;box-shadow:0 18px 55px #0009}
+h2{font-size:16px;color:#e5ad32;margin:4px 0 14px;letter-spacing:1px}
+.section{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #4c3510}
+label{display:block;font-size:12px;color:#cbb587;margin:10px 0 6px}
+input{width:100%;padding:12px 13px;border-radius:10px;border:1px solid #604517;background:#0b0806;color:#f6e6bd;font-size:15px;outline:none}
+input:focus{border-color:#e0a82b;box-shadow:0 0 0 2px #d9a32b22}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.upload{display:block;padding:20px;border:1px dashed #c28b1b;border-radius:12px;text-align:center;background:#0d0907;color:#e6c679;cursor:pointer;font-size:14px}
+.upload input{display:none}
+button{width:100%;padding:14px;border-radius:11px;border:1px solid #8d6213;font-weight:900;cursor:pointer}
+.gold{background:linear-gradient(180deg,#efbb42,#a66b0c);color:#160d03;box-shadow:inset 0 1px #ffe6a0,0 8px 22px #0007}
+.dark{background:#17100b;color:#e5c47b}
+.note,.status{font:12px Arial,sans-serif;color:#a99675;line-height:1.5;margin-top:8px}
+.status{color:#e1b43e;min-height:16px}
+.preview{display:flex;justify-content:center;align-items:flex-start}
+canvas{width:min(100%,720px);height:auto;background:#030303;border:1px solid #8d6418;box-shadow:0 20px 70px #000}
+@media(max-width:850px){.app{grid-template-columns:1fr;padding:10px}.preview{order:-1}.panel{padding:14px}}
 </style>
 </head>
 <body>
-<header><b>🪔 Jyoti Gruh Udhyog</b><small>PREMIUM POSTER MAKER</small></header>
-<div class="wrap">
-<section class="panel">
-<h2>1. PRODUCT IMAGE</h2>
-<label class="upload">📷 Upload Product Image
-<input id="photo" type="file" accept="image/*" hidden></label>
-<div class="note">તમારી product image આપો. Posterમાં એ જ image ઉપયોગ થશે.</div>
+<header><div class="logo">Jyoti Gruh Udhyog</div><div class="tag">PREMIUM POSTER MAKER • RAJKOT, GUJARAT</div></header>
 
-<h2>2. DETAILS</h2>
+<main class="app">
+<section class="panel">
+<div class="section">
+<h2>01 • PRODUCT IMAGE</h2>
+<label class="upload">📷 TAP TO UPLOAD PRODUCT IMAGE
+<input id="photo" type="file" accept="image/*">
+</label>
+<div class="note">તમારી original product photo આપો. Posterમાં photo crop થયા વગર premium frameમાં fit થશે.</div>
+</div>
+
+<div class="section">
+<h2>02 • PRODUCT DETAILS</h2>
 <label>PRODUCT NAME *</label>
-<input id="name" value="RATLAMI SEV">
+<input id="name" value="MASALA BHAKRI" placeholder="Example: Ratlami Sev">
 <div class="row">
 <div><label>WEIGHT — OPTIONAL</label><input id="weight" placeholder="200 Gm"></div>
-<div><label>PRICE — OPTIONAL</label><input id="price" placeholder="Rs 80"></div>
+<div><label>PRICE — OPTIONAL</label><input id="price" placeholder="Rs 85"></div>
+</div>
 </div>
 
-<h2>3. GENERATE</h2>
-<button class="gold" id="make">✨ CREATE WEBP POSTER</button>
+<div class="section">
+<h2>03 • CREATE</h2>
+<button class="gold" id="make">✨ CREATE PREMIUM POSTER</button>
 <div class="status" id="status"></div>
-<button class="dark" id="download">⬇ DOWNLOAD WEBP</button>
-<div class="note">1024×1024. Price empty હશે તો price badge દેખાશે નહીં. WEBP size 40–50 KB target રાખવાનો પ્રયાસ થશે.</div>
-</section>
-<section class="preview"><canvas id="canvas" width="1024" height="1024"></canvas></section>
 </div>
+
+<button class="dark" id="download">⬇ DOWNLOAD 1024×1024 WEBP</button>
+<div class="note">WEBP export targets approximately 40–50 KB where image complexity allows.</div>
+</section>
+
+<section class="preview"><canvas id="canvas" width="1024" height="1024"></canvas></section>
+</main>
 
 <script>
-const c=document.getElementById('canvas'),x=c.getContext('2d');let img=null;
+const c=document.getElementById('canvas'),ctx=c.getContext('2d');
+let img=null;
 const $=id=>document.getElementById(id);
 
-function fit(im,X,Y,W,H){
- const r=Math.max(W/im.width,H/im.height),w=im.width*r,h=im.height*r;
- x.drawImage(im,X+(W-w)/2,Y+(H-h)/2,w,h);
+function fitContain(im,x,y,w,h,pad=16){
+ const r=Math.min((w-pad*2)/im.width,(h-pad*2)/im.height);
+ const nw=im.width*r,nh=im.height*r;
+ ctx.drawImage(im,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
+}
+function corner(x,y,flipX=1,flipY=1){
+ ctx.save();ctx.translate(x,y);ctx.scale(flipX,flipY);
+ ctx.strokeStyle='#e2aa25';ctx.lineWidth=4;ctx.beginPath();
+ ctx.moveTo(0,90);ctx.quadraticCurveTo(8,35,58,10);ctx.quadraticCurveTo(82,0,90,0);
+ ctx.moveTo(10,78);ctx.quadraticCurveTo(25,48,50,40);ctx.quadraticCurveTo(72,32,78,10);
+ ctx.stroke();
+ ctx.lineWidth=2;ctx.beginPath();ctx.arc(28,25,13,0,Math.PI*2);ctx.stroke();
+ ctx.restore();
+}
+function badge(cx,cy,top,bottom,symbol){
+ ctx.strokeStyle='#d7a020';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy,39,0,Math.PI*2);ctx.stroke();
+ ctx.fillStyle='#e8b12f';ctx.font='bold 25px Georgia';ctx.fillText(symbol,cx,cy+8);
+ ctx.fillStyle='#eee3cb';ctx.font='bold 14px Georgia';ctx.fillText(top,cx,cy+60);ctx.fillText(bottom,cx,cy+79);
+ ctx.strokeStyle='#8b6417';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx-50,cy+96);ctx.lineTo(cx+50,cy+96);ctx.stroke();
 }
 function draw(){
- x.fillStyle='#050403';x.fillRect(0,0,1024,1024);
- // gold ornate-style border
- x.strokeStyle='#d49b1d';x.lineWidth=5;x.strokeRect(16,16,992,992);
- x.strokeStyle='#6e4a12';x.lineWidth=2;x.strokeRect(30,30,964,964);
- // top brand
- x.textAlign='center';x.fillStyle='#edb534';x.font='bold 48px Georgia';x.fillText('Jyoti',512,98);
- x.font='bold 24px Georgia';x.fillText('Gruh Udhyog',512,130);
- x.fillStyle='#eee1c5';x.font='19px Georgia';x.fillText('• RAJKOT • GUJARAT •',512,166);
- x.font='17px Georgia';x.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,198);
+ const name=($('name').value.trim()||'PRODUCT NAME').toUpperCase();
+ const weight=$('weight').value.trim();
+ const price=$('price').value.trim();
 
- // left premium feature rail
- const b=[['◉','100%','NATURAL'],['✓','PREMIUM','QUALITY'],['✦','FINE','GRAINS'],['◇','NO ADDED','PRESERVATIVES'],['♡','MADE WITH','LOVE & CARE']];
- b.forEach((v,i)=>{let y=270+i*135;x.strokeStyle='#d09a1c';x.lineWidth=2;x.beginPath();x.arc(92,y-18,36,0,7);x.stroke();x.fillStyle='#edb02b';x.font='bold 25px Georgia';x.fillText(v[0],92,y-9);x.fillStyle='#eee1c5';x.font='bold 15px Georgia';x.fillText(v[1],92,y+44);x.fillText(v[2],92,y+63)});
+ // luxurious near-black background
+ let g=ctx.createRadialGradient(650,420,40,500,520,760);
+ g.addColorStop(0,'#21150b');g.addColorStop(.45,'#0d0906');g.addColorStop(1,'#030303');
+ ctx.fillStyle=g;ctx.fillRect(0,0,1024,1024);
+
+ // double frame
+ ctx.strokeStyle='#e0a824';ctx.lineWidth=5;ctx.strokeRect(15,15,994,994);
+ ctx.strokeStyle='#5e4212';ctx.lineWidth=2;ctx.strokeRect(30,30,964,964);
+ ctx.strokeStyle='#9b711b';ctx.lineWidth=1;ctx.strokeRect(40,40,944,944);
+ corner(25,25,1,1);corner(999,25,-1,1);corner(25,999,1,-1);corner(999,999,-1,-1);
+
+ ctx.textAlign='center';
+ // premium logo emblem
+ ctx.strokeStyle='#d9a324';ctx.lineWidth=2;ctx.beginPath();ctx.arc(512,102,75,0,Math.PI*2);ctx.stroke();
+ ctx.fillStyle='#f2bf4b';ctx.font='30px Georgia';ctx.fillText('🪔',512,68);
+ ctx.fillStyle='#f0bd43';ctx.font='bold 42px Georgia';ctx.shadowColor='#9b6810';ctx.shadowBlur=8;ctx.fillText('Jyoti',512,112);
+ ctx.shadowBlur=0;ctx.fillStyle='#e7d5ac';ctx.font='bold 22px Georgia';ctx.fillText('Gruh Udhyog',512,138);
+ ctx.fillStyle='#c9b895';ctx.font='17px Georgia';ctx.fillText('• RAJKOT • GUJARAT •',512,178);
+ ctx.fillStyle='#eadfc9';ctx.font='16px Georgia';ctx.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,207);
+
+ // left rail
+ badge(94,275,'100%','NATURAL','◉');
+ badge(94,390,'PREMIUM','QUALITY','✓');
+ badge(94,505,'FINE','GRAINS','✦');
+ badge(94,620,'NO ADDED','PRESERVATIVES','◇');
+ badge(94,735,'MADE WITH','LOVE & CARE','♡');
 
  // title plaque
- x.strokeStyle='#d49b1d';x.lineWidth=4;x.strokeRect(250,260,690,170);
- let name=($('name').value||'PRODUCT NAME').toUpperCase();
- x.fillStyle='#f6d88f';x.font=name.length>17?'bold 48px Georgia':'bold 60px Georgia';
- x.fillText(name,595,360);
- x.fillStyle='#d29a1e';x.fillRect(350,405,490,54);
- x.fillStyle='#1a0e04';x.font='bold 23px Georgia';x.fillText('CRISPY  •  TASTY  •  PREMIUM',595,440);
+ const tx=250,ty=245,tw=700,th=190;
+ ctx.strokeStyle='#dba426';ctx.lineWidth=4;ctx.strokeRect(tx,ty,tw,th);
+ ctx.strokeStyle='#785615';ctx.lineWidth=2;ctx.strokeRect(tx+12,ty+12,tw-24,th-24);
+ ctx.fillStyle='#f6dfa5';
+ ctx.shadowColor='#8d5c0b';ctx.shadowBlur=7;
+ ctx.font=name.length>18?'bold 47px Georgia':'bold 60px Georgia';
+ if(name.length>22)ctx.font='bold 40px Georgia';
+ // split long names into two lines
+ if(name.length>16){
+   let words=name.split(' '),line='',lines=[];
+   words.forEach(w=>{let t=line?line+' '+w:w;if(ctx.measureText(t).width>610&&line){lines.push(line);line=w}else line=t});if(line)lines.push(line);
+   const start=ty+78-(lines.length-1)*27;
+   lines.forEach((ln,i)=>ctx.fillText(ln,600,start+i*60));
+ }else ctx.fillText(name,600,350);
+ ctx.shadowBlur=0;
 
- // image area
- x.save();x.beginPath();x.rect(250,475,690,440);x.clip();
- if(img) fit(img,250,475,690,440);
- else {x.fillStyle='#1b1008';x.fillRect(250,475,690,440);x.fillStyle='#b68a39';x.font='22px Arial';x.fillText('UPLOAD PRODUCT IMAGE',595,700)}
- x.restore();
+ // ribbon
+ ctx.fillStyle='#dca323';ctx.beginPath();ctx.moveTo(350,414);ctx.lineTo(840,414);ctx.lineTo(816,468);ctx.lineTo(374,468);ctx.closePath();ctx.fill();
+ ctx.fillStyle='#170d04';ctx.font='bold 22px Georgia';ctx.fillText('CRISPY  •  TASTY  •  PREMIUM',595,449);
 
- // optional price badge
- let price=$('price').value.trim();
- if(price){
-   x.fillStyle='#090604';x.strokeStyle='#dca522';x.lineWidth=4;x.beginPath();x.arc(860,825,82,0,7);x.fill();x.stroke();
-   x.fillStyle='#e8b63f';x.font='bold 18px Georgia';x.fillText('PRICE',860,798);
-   x.font='bold 38px Georgia';x.fillText(price,860,850);
+ // image frame
+ ctx.fillStyle='#070504';ctx.strokeStyle='#9b711b';ctx.lineWidth=3;ctx.fillRect(250,490,700,410);ctx.strokeRect(250,490,700,410);
+ ctx.strokeStyle='#3f2b0c';ctx.lineWidth=1;ctx.strokeRect(263,503,674,384);
+ if(img) fitContain(img,263,503,674,384,18);
+ else{
+   ctx.fillStyle='#9d7b3d';ctx.font='20px Arial';ctx.fillText('UPLOAD PRODUCT IMAGE',600,700);
  }
- let weight=$('weight').value.trim();
- if(weight){x.fillStyle='#e7b33d';x.font='bold 22px Georgia';x.fillText(weight,595,950)}
- x.fillStyle='#e5d7ba';x.font='17px Georgia';x.fillText('RAJKOT, GUJARAT  |  +91 9712149344  |  ORDER ON WHATSAPP',512,986);
+
+ // optional price
+ if(price){
+   ctx.fillStyle='#080604';ctx.strokeStyle='#e1ad2b';ctx.lineWidth=4;
+   ctx.beginPath();ctx.arc(870,842,73,0,Math.PI*2);ctx.fill();ctx.stroke();
+   ctx.strokeStyle='#755114';ctx.lineWidth=1;ctx.beginPath();ctx.arc(870,842,62,0,Math.PI*2);ctx.stroke();
+   ctx.fillStyle='#dca72c';ctx.font='bold 17px Georgia';ctx.fillText('PRICE',870,820);
+   ctx.fillStyle='#f4d68e';ctx.font='bold 37px Georgia';ctx.fillText(price,870,862);
+ }
+ if(weight){
+   ctx.fillStyle='#e7bc56';ctx.font='bold 20px Georgia';ctx.fillText(weight,600,932);
+ }
+ // footer
+ ctx.strokeStyle='#8e6417';ctx.lineWidth=2;ctx.strokeRect(160,952,720,38);
+ ctx.fillStyle='#e8dcc2';ctx.font='15px Georgia';ctx.fillText('RAJKOT, GUJARAT   |   +91 9712149344   |   ORDER ON WHATSAPP',520,978);
 }
-$('photo').addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{img=new Image();img.onload=draw;img.src=r.result};r.readAsDataURL(f)});
-document.querySelectorAll('input').forEach(el=>el.addEventListener('input',draw));
-$('make').onclick=()=>{draw();$('status').textContent='Poster ready ✓'};
-async function makeBlob(target=50000){
- return new Promise(resolve=>{let lo=.25,hi=.95,best=null;
- function test(){let q=(lo+hi)/2;c.toBlob(b=>{if(!b)return resolve(best);if(b.size<=target){best=b;lo=q}else hi=q;if(hi-lo<.01||best)resolve(best||b);else test()},'image/webp',q)}
- test()})
+$('photo').addEventListener('change',e=>{
+ const f=e.target.files[0];if(!f)return;
+ const r=new FileReader();r.onload=()=>{img=new Image();img.onload=draw;img.src=r.result};r.readAsDataURL(f);
+});
+document.querySelectorAll('input').forEach(i=>i.addEventListener('input',draw));
+$('make').onclick=()=>{draw();$('status').textContent='Premium poster ready ✓'};
+function blob(q){return new Promise(r=>c.toBlob(r,'image/webp',q))}
+async function optimize(){
+ let best=await blob(.82);
+ for(let q of [.72,.62,.55,.48,.42,.36,.30]){
+   if(best.size<=50000)break;
+   const b=await blob(q);if(b.size<best.size)best=b;
+ }
+ return best;
 }
 $('download').onclick=async()=>{
  draw();$('status').textContent='Optimizing WEBP…';
- let b=await makeBlob(50000);
- if(b.size>55000){b=await new Promise(r=>c.toBlob(r,'image/webp',.55))}
- let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';a.click();
- $('status').textContent=`Downloaded ✓  ${(b.size/1024).toFixed(1)} KB`;
+ const b=await optimize();
+ const a=document.createElement('a');a.href=URL.createObjectURL(b);
+ a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';
+ a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
+ $('status').textContent=`Downloaded ✓ ${(b.size/1024).toFixed(1)} KB`;
 };
 draw();
 </script>
