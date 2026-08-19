@@ -1,131 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jyoti Gruh Udhyog • AI Poster Maker</title>
+<title>Jyoti Gruh Udhyog Poster Maker</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090705;color:#f7e7bd;font-family:Georgia,serif}
-header{padding:18px;text-align:center;border-bottom:1px solid #6f4b10;background:#0d0906;position:sticky;top:0;z-index:5}
-.brand{font-size:25px;font-weight:900;color:#e9ad28}.sub{font-size:12px;letter-spacing:2px;color:#c7b28b}
-.app{max-width:1180px;margin:auto;padding:18px;display:grid;grid-template-columns:350px 1fr;gap:18px}
-.card{background:linear-gradient(145deg,#130d08,#090705);border:1px solid #6f4b10;border-radius:16px;padding:18px;box-shadow:0 15px 45px #0008}
-h2{font-size:16px;color:#e9ad28;margin:0 0 14px;letter-spacing:.8px}.section{border-bottom:1px solid #4d3615;padding-bottom:16px;margin-bottom:16px}
-label{display:block;font-size:12px;color:#d8c39b;margin:11px 0 6px;letter-spacing:.5px}
-input,select{width:100%;background:#100d0b;color:#fff0ca;border:1px solid #574321;border-radius:9px;padding:12px;font-size:15px;outline:none}
-input:focus,select:focus{border-color:#d99c1f}
-.file{border:1px dashed #c69220;padding:17px;text-align:center;border-radius:10px;color:#d9bd83}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-button{width:100%;padding:13px;border-radius:10px;border:1px solid #8c5d0d;font-weight:800;cursor:pointer}
-.gold{background:linear-gradient(#e7ad2f,#9c640c);color:#160d03}.dark{background:#18110c;color:#e8ca8d}
-.preview{display:flex;justify-content:center;align-items:flex-start}
-canvas{width:min(100%,720px);height:auto;background:#050403;border:1px solid #8e6416;box-shadow:0 15px 55px #000}
-.note{font:12px Arial;color:#9e8d70;margin-top:9px;line-height:1.5}.status{font:12px Arial;color:#d6b66e;margin-top:9px;min-height:16px}
-@media(max-width:850px){.app{grid-template-columns:1fr;padding:10px}header{position:static}.preview{order:-1}}
+*{box-sizing:border-box}body{margin:0;background:#090705;color:#f4dfb0;font-family:Georgia,serif}
+header{text-align:center;padding:18px;background:#0b0806;border-bottom:1px solid #8c6115}
+header b{font-size:25px;color:#e9ad27} header small{display:block;letter-spacing:2px;margin-top:5px;color:#c7ad7b}
+.wrap{max-width:1100px;margin:auto;padding:14px;display:grid;grid-template-columns:340px 1fr;gap:16px}
+.panel{background:#100b07;border:1px solid #704c12;border-radius:16px;padding:16px}
+h2{font-size:17px;color:#e7a91e;margin:5px 0 14px}
+label{display:block;font-size:12px;margin:12px 0 6px;color:#cdb889}
+input{width:100%;padding:12px;border-radius:9px;border:1px solid #624719;background:#0b0907;color:#f8e7c0;font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+button{width:100%;padding:13px;border-radius:10px;font-weight:800;border:1px solid #8f6417;cursor:pointer}
+.gold{background:linear-gradient(#e9b130,#9a6208);color:#160d03}.dark{background:#19110b;color:#e8c982}
+.upload{padding:18px;border:1px dashed #c99521;border-radius:10px;text-align:center;cursor:pointer}
+#canvas{width:min(100%,700px);height:auto;border:1px solid #8c6417;box-shadow:0 15px 50px #000}
+.preview{display:flex;justify-content:center}.note{font:12px Arial;color:#9f8e70;line-height:1.5;margin-top:8px}
+.status{font:12px Arial;color:#e2b33d;margin:9px 0;min-height:16px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}.preview{order:-1}}
 </style>
 </head>
 <body>
-<header><div class="brand">🪔 Jyoti Gruh Udhyog</div><div class="sub">AI PREMIUM POSTER MAKER</div></header>
-<main class="app">
-<section class="card">
-<div class="section">
-<h2>1. PRODUCT IMAGE — OPTIONAL</h2>
-<label class="file">📷 Upload your product photo
-<input id="photo" type="file" accept="image/*" style="display:none">
-</label>
-<div class="note">Image હોય તો upload કરો. Image ન હોય તો AI product image બનાવશે.</div>
-</div>
+<header><b>🪔 Jyoti Gruh Udhyog</b><small>PREMIUM POSTER MAKER</small></header>
+<div class="wrap">
+<section class="panel">
+<h2>1. PRODUCT IMAGE</h2>
+<label class="upload">📷 Upload Product Image
+<input id="photo" type="file" accept="image/*" hidden></label>
+<div class="note">તમારી product image આપો. Posterમાં એ જ image ઉપયોગ થશે.</div>
 
-<div class="section">
-<h2>2. PRODUCT DETAILS</h2>
+<h2>2. DETAILS</h2>
 <label>PRODUCT NAME *</label>
-<input id="name" value="Ratlami Sev" placeholder="Example: Ratlami Sev">
+<input id="name" value="RATLAMI SEV">
 <div class="row">
 <div><label>WEIGHT — OPTIONAL</label><input id="weight" placeholder="200 Gm"></div>
 <div><label>PRICE — OPTIONAL</label><input id="price" placeholder="Rs 80"></div>
 </div>
-<label>AI IMAGE STYLE</label>
-<select id="style">
-<option>Premium Indian food photography</option>
-<option>Traditional Gujarati premium food photography</option>
-<option>Luxury black and gold product photography</option>
-</select>
-</div>
 
-<div class="section">
 <h2>3. GENERATE</h2>
-<button class="gold" id="generate">✨ GENERATE POSTER</button>
+<button class="gold" id="make">✨ CREATE WEBP POSTER</button>
 <div class="status" id="status"></div>
-</div>
-
-<div>
-<button class="dark" id="download">⬇ DOWNLOAD 1024×1024 WEBP</button>
-<div class="note">Price empty હોય તો posterમાં price badge automatically hide થશે.</div>
-</div>
+<button class="dark" id="download">⬇ DOWNLOAD WEBP</button>
+<div class="note">1024×1024. Price empty હશે તો price badge દેખાશે નહીં. WEBP size 40–50 KB target રાખવાનો પ્રયાસ થશે.</div>
 </section>
-
 <section class="preview"><canvas id="canvas" width="1024" height="1024"></canvas></section>
-</main>
+</div>
 
 <script>
-const c=document.getElementById('canvas'),ctx=c.getContext('2d');
-let productImg=null, generatedImg=null;
+const c=document.getElementById('canvas'),x=c.getContext('2d');let img=null;
 const $=id=>document.getElementById(id);
 
-function loadImage(src){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=src})}
-function fitImage(im,x,y,w,h){
- const r=Math.max(w/im.width,h/im.height),nw=im.width*r,nh=im.height*r;
- ctx.drawImage(im,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
+function fit(im,X,Y,W,H){
+ const r=Math.max(W/im.width,H/im.height),w=im.width*r,h=im.height*r;
+ x.drawImage(im,X+(W-w)/2,Y+(H-h)/2,w,h);
 }
 function draw(){
- const name=$('name').value.trim()||'Product Name', weight=$('weight').value.trim(), price=$('price').value.trim();
- ctx.fillStyle='#050403';ctx.fillRect(0,0,1024,1024);
- // ornate gold frame
- ctx.strokeStyle='#d49a19';ctx.lineWidth=5;ctx.strokeRect(18,18,988,988);
- ctx.strokeStyle='#6f4b10';ctx.lineWidth=2;ctx.strokeRect(31,31,962,962);
- // top branding
- ctx.textAlign='center';ctx.fillStyle='#e9b33c';ctx.font='bold 48px Georgia';ctx.fillText('Jyoti',512,105);
- ctx.font='bold 25px Georgia';ctx.fillText('Gruh Udhyog',512,137);
- ctx.fillStyle='#e8dfca';ctx.font='20px Georgia';ctx.fillText('RAJKOT • GUJARAT',512,172);
- ctx.font='18px Georgia';ctx.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,204);
- // side badges
- const badges=[['◉','100%','NATURAL'],['✓','PREMIUM','QUALITY'],['✦','FINE','GRAINS'],['◇','NO ADDED','PRESERVATIVES'],['♡','MADE WITH','LOVE & CARE']];
- badges.forEach((b,i)=>{let y=270+i*135;ctx.strokeStyle='#bd8616';ctx.lineWidth=2;ctx.beginPath();ctx.arc(92,y-20,38,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#e7a91e';ctx.font='bold 25px Georgia';ctx.fillText(b[0],92,y-11);ctx.fillStyle='#eee1c5';ctx.font='bold 16px Georgia';ctx.fillText(b[1],92,y+45);ctx.fillText(b[2],92,y+65)});
- // product title plaque
- ctx.strokeStyle='#d29a22';ctx.lineWidth=4;ctx.strokeRect(250,270,670,170);
- ctx.fillStyle='#f3d58c';ctx.font='bold 65px Georgia';let title=name.toUpperCase();if(title.length>16)ctx.font='bold 52px Georgia';
- ctx.fillText(title,585,365);
- ctx.fillStyle='#b57a11';ctx.fillRect(350,410,470,55);
- ctx.fillStyle='#170e05';ctx.font='bold 24px Georgia';ctx.fillText('CRISPY  •  TASTY  •  PREMIUM',585,446);
- // product image area
- ctx.save();ctx.beginPath();ctx.rect(250,480,670,430);ctx.clip();
- const im=productImg||generatedImg;
- if(im) fitImage(im,250,480,670,430);
- else {ctx.fillStyle='#1a1008';ctx.fillRect(250,480,670,430);ctx.fillStyle='#a8874b';ctx.font='22px Arial';ctx.fillText('AI PRODUCT IMAGE',585,700)}
- ctx.restore();
+ x.fillStyle='#050403';x.fillRect(0,0,1024,1024);
+ // gold ornate-style border
+ x.strokeStyle='#d49b1d';x.lineWidth=5;x.strokeRect(16,16,992,992);
+ x.strokeStyle='#6e4a12';x.lineWidth=2;x.strokeRect(30,30,964,964);
+ // top brand
+ x.textAlign='center';x.fillStyle='#edb534';x.font='bold 48px Georgia';x.fillText('Jyoti',512,98);
+ x.font='bold 24px Georgia';x.fillText('Gruh Udhyog',512,130);
+ x.fillStyle='#eee1c5';x.font='19px Georgia';x.fillText('• RAJKOT • GUJARAT •',512,166);
+ x.font='17px Georgia';x.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,198);
+
+ // left premium feature rail
+ const b=[['◉','100%','NATURAL'],['✓','PREMIUM','QUALITY'],['✦','FINE','GRAINS'],['◇','NO ADDED','PRESERVATIVES'],['♡','MADE WITH','LOVE & CARE']];
+ b.forEach((v,i)=>{let y=270+i*135;x.strokeStyle='#d09a1c';x.lineWidth=2;x.beginPath();x.arc(92,y-18,36,0,7);x.stroke();x.fillStyle='#edb02b';x.font='bold 25px Georgia';x.fillText(v[0],92,y-9);x.fillStyle='#eee1c5';x.font='bold 15px Georgia';x.fillText(v[1],92,y+44);x.fillText(v[2],92,y+63)});
+
+ // title plaque
+ x.strokeStyle='#d49b1d';x.lineWidth=4;x.strokeRect(250,260,690,170);
+ let name=($('name').value||'PRODUCT NAME').toUpperCase();
+ x.fillStyle='#f6d88f';x.font=name.length>17?'bold 48px Georgia':'bold 60px Georgia';
+ x.fillText(name,595,360);
+ x.fillStyle='#d29a1e';x.fillRect(350,405,490,54);
+ x.fillStyle='#1a0e04';x.font='bold 23px Georgia';x.fillText('CRISPY  •  TASTY  •  PREMIUM',595,440);
+
+ // image area
+ x.save();x.beginPath();x.rect(250,475,690,440);x.clip();
+ if(img) fit(img,250,475,690,440);
+ else {x.fillStyle='#1b1008';x.fillRect(250,475,690,440);x.fillStyle='#b68a39';x.font='22px Arial';x.fillText('UPLOAD PRODUCT IMAGE',595,700)}
+ x.restore();
+
  // optional price badge
+ let price=$('price').value.trim();
  if(price){
-   ctx.fillStyle='#0b0704';ctx.strokeStyle='#d69b1e';ctx.lineWidth=4;ctx.beginPath();ctx.arc(865,835,78,0,Math.PI*2);ctx.fill();ctx.stroke();
-   ctx.fillStyle='#e7b33d';ctx.font='bold 20px Georgia';ctx.fillText('PRICE',865,805);
-   ctx.font='bold 42px Georgia';ctx.fillText(price,865,855);
+   x.fillStyle='#090604';x.strokeStyle='#dca522';x.lineWidth=4;x.beginPath();x.arc(860,825,82,0,7);x.fill();x.stroke();
+   x.fillStyle='#e8b63f';x.font='bold 18px Georgia';x.fillText('PRICE',860,798);
+   x.font='bold 38px Georgia';x.fillText(price,860,850);
  }
- if(weight){ctx.fillStyle='#e7b33d';ctx.font='bold 24px Georgia';ctx.fillText(weight,585,950)}
- ctx.fillStyle='#d6c5a2';ctx.font='18px Georgia';ctx.fillText('RAJKOT, GUJARAT   |   +91 9712149344   |   ORDER ON WHATSAPP',512,985);
+ let weight=$('weight').value.trim();
+ if(weight){x.fillStyle='#e7b33d';x.font='bold 22px Georgia';x.fillText(weight,595,950)}
+ x.fillStyle='#e5d7ba';x.font='17px Georgia';x.fillText('RAJKOT, GUJARAT  |  +91 9712149344  |  ORDER ON WHATSAPP',512,986);
 }
-$('photo').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=async()=>{productImg=await loadImage(r.result);draw()};r.readAsDataURL(f)});
-$('generate').onclick=async()=>{
- const name=$('name').value.trim(); if(!name){$('status').textContent='Product name required.';return}
- $('status').textContent=productImg?'Creating poster…':'Generating AI product image…';
- try{
-   if(!productImg){
-     const res=await fetch('/api/generate-image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,style:$('style').value})});
-     if(!res.ok) throw new Error(await res.text());
-     const data=await res.json(); generatedImg=await loadImage(data.image);
-   }
-   draw();$('status').textContent='Poster ready ✓';
- }catch(e){$('status').textContent='AI image generation is not connected yet. Upload a photo or connect the secure server/API.';draw()}
+$('photo').addEventListener('change',e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{img=new Image();img.onload=draw;img.src=r.result};r.readAsDataURL(f)});
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input',draw));
+$('make').onclick=()=>{draw();$('status').textContent='Poster ready ✓'};
+async function makeBlob(target=50000){
+ return new Promise(resolve=>{let lo=.25,hi=.95,best=null;
+ function test(){let q=(lo+hi)/2;c.toBlob(b=>{if(!b)return resolve(best);if(b.size<=target){best=b;lo=q}else hi=q;if(hi-lo<.01||best)resolve(best||b);else test()},'image/webp',q)}
+ test()})
+}
+$('download').onclick=async()=>{
+ draw();$('status').textContent='Optimizing WEBP…';
+ let b=await makeBlob(50000);
+ if(b.size>55000){b=await new Promise(r=>c.toBlob(r,'image/webp',.55))}
+ let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';a.click();
+ $('status').textContent=`Downloaded ✓  ${(b.size/1024).toFixed(1)} KB`;
 };
-$('download').onclick=()=>c.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)},'image/webp',.82);
 draw();
 </script>
 </body>
