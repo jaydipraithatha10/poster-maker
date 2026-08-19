@@ -5,192 +5,164 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Jyoti Gruh Udhyog • Premium Poster Maker</title>
 <style>
-:root{--gold:#d8a42a;--gold2:#f4d98d;--dark:#080605;--panel:#100b08;--line:#674711}
 *{box-sizing:border-box}
-body{margin:0;background:#070504;color:#f3dfae;font-family:Georgia,"Times New Roman",serif}
-header{background:linear-gradient(180deg,#120c07,#080604);border-bottom:1px solid #7e5814;padding:18px;text-align:center}
-.logo{font-size:28px;font-weight:900;color:var(--gold2);text-shadow:0 2px 0 #6b4308,0 0 12px #8b5b0b}
-.logo:before{content:"🪔";font-size:26px;margin-right:8px}
-.tag{font-size:11px;letter-spacing:3px;color:#bca77b;margin-top:4px}
-.app{max-width:1180px;margin:auto;padding:16px;display:grid;grid-template-columns:350px 1fr;gap:18px}
-.panel{background:linear-gradient(145deg,#140d08,#080605);border:1px solid #765316;border-radius:18px;padding:18px;box-shadow:0 18px 55px #0009}
-h2{font-size:16px;color:#e5ad32;margin:4px 0 14px;letter-spacing:1px}
-.section{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #4c3510}
-label{display:block;font-size:12px;color:#cbb587;margin:10px 0 6px}
-input{width:100%;padding:12px 13px;border-radius:10px;border:1px solid #604517;background:#0b0806;color:#f6e6bd;font-size:15px;outline:none}
-input:focus{border-color:#e0a82b;box-shadow:0 0 0 2px #d9a32b22}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.upload{display:block;padding:20px;border:1px dashed #c28b1b;border-radius:12px;text-align:center;background:#0d0907;color:#e6c679;cursor:pointer;font-size:14px}
+body{margin:0;background:#050403;color:#f3d98e;font-family:Georgia,"Times New Roman",serif}
+header{padding:16px;text-align:center;background:#090604;border-bottom:1px solid #9a6b14}
+.logo{font-size:27px;font-weight:900;color:#f0bd45;text-shadow:0 2px 0 #6a4208,0 0 12px #9b650d}
+.logo span{display:block;font-size:12px;letter-spacing:3px;color:#bda779;margin-top:3px}
+.app{max-width:1180px;margin:auto;padding:16px;display:grid;grid-template-columns:340px 1fr;gap:18px}
+.panel{background:linear-gradient(145deg,#130c08,#080604);border:1px solid #765113;border-radius:18px;padding:17px;box-shadow:0 18px 55px #0009}
+h2{font-size:16px;color:#eab12e;margin:3px 0 13px;letter-spacing:.8px}
+.section{border-bottom:1px solid #4c3510;padding-bottom:15px;margin-bottom:15px}
+label{display:block;font-size:12px;color:#cdb98a;margin:9px 0 6px}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid #604719;background:#0b0806;color:#f7e8c0;font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.upload{display:block;border:1px dashed #c99620;padding:18px;border-radius:11px;text-align:center;color:#e5c476;cursor:pointer}
 .upload input{display:none}
-button{width:100%;padding:14px;border-radius:11px;border:1px solid #8d6213;font-weight:900;cursor:pointer}
-.gold{background:linear-gradient(180deg,#efbb42,#a66b0c);color:#160d03;box-shadow:inset 0 1px #ffe6a0,0 8px 22px #0007}
-.dark{background:#17100b;color:#e5c47b}
-.note,.status{font:12px Arial,sans-serif;color:#a99675;line-height:1.5;margin-top:8px}
-.status{color:#e1b43e;min-height:16px}
-.preview{display:flex;justify-content:center;align-items:flex-start}
-canvas{width:min(100%,720px);height:auto;background:#030303;border:1px solid #8d6418;box-shadow:0 20px 70px #000}
-@media(max-width:850px){.app{grid-template-columns:1fr;padding:10px}.preview{order:-1}.panel{padding:14px}}
+button{width:100%;padding:13px;border-radius:10px;font-weight:900;cursor:pointer;border:1px solid #986b17}
+.gold{background:linear-gradient(#f0bd40,#a56b0c);color:#180e03}
+.dark{background:#17100b;color:#e6c77f}
+.note,.status{font:12px Arial;color:#9f8d6e;line-height:1.5;margin-top:8px}
+.status{color:#e1b33d;min-height:16px}
+.preview{display:flex;justify-content:center}
+canvas{width:min(100%,720px);height:auto;border:1px solid #a67819;box-shadow:0 20px 70px #000}
+@media(max-width:850px){.app{grid-template-columns:1fr;padding:10px}.preview{order:-1}}
 </style>
 </head>
 <body>
-<header><div class="logo">Jyoti Gruh Udhyog</div><div class="tag">PREMIUM POSTER MAKER • RAJKOT, GUJARAT</div></header>
-
-<main class="app">
+<header><div class="logo">🪔 Jyoti Gruh Udhyog<span>PREMIUM PRODUCT POSTER MAKER • RAJKOT, GUJARAT</span></div></header>
+<div class="app">
 <section class="panel">
 <div class="section">
 <h2>01 • PRODUCT IMAGE</h2>
-<label class="upload">📷 TAP TO UPLOAD PRODUCT IMAGE
-<input id="photo" type="file" accept="image/*">
-</label>
-<div class="note">તમારી original product photo આપો. Posterમાં photo crop થયા વગર premium frameમાં fit થશે.</div>
+<label class="upload">📷 UPLOAD PRODUCT IMAGE<input id="photo" type="file" accept="image/*"></label>
+<div class="note">તમારી photo આપો. Posterમાં photo premium frameમાં proportion સાચવીને fit થશે.</div>
 </div>
-
 <div class="section">
 <h2>02 • PRODUCT DETAILS</h2>
-<label>PRODUCT NAME *</label>
-<input id="name" value="MASALA BHAKRI" placeholder="Example: Ratlami Sev">
+<label>PRODUCT NAME *</label><input id="name" value="RAYTA MARCHA">
 <div class="row">
-<div><label>WEIGHT — OPTIONAL</label><input id="weight" placeholder="200 Gm"></div>
-<div><label>PRICE — OPTIONAL</label><input id="price" placeholder="Rs 85"></div>
+<div><label>WEIGHT — OPTIONAL</label><input id="weight" placeholder="400 gm"></div>
+<div><label>PRICE — OPTIONAL</label><input id="price" placeholder="Rs 190"></div>
 </div>
 </div>
-
 <div class="section">
 <h2>03 • CREATE</h2>
-<button class="gold" id="make">✨ CREATE PREMIUM POSTER</button>
+<button class="gold" id="make">✨ CREATE PREMIUM WEBP</button>
 <div class="status" id="status"></div>
 </div>
-
 <button class="dark" id="download">⬇ DOWNLOAD 1024×1024 WEBP</button>
-<div class="note">WEBP export targets approximately 40–50 KB where image complexity allows.</div>
+<div class="note">Price empty હોય તો price badge automatically hide થશે. WEBP export 40–50 KB target સુધી optimize કરવાનો પ્રયાસ કરે છે.</div>
 </section>
-
 <section class="preview"><canvas id="canvas" width="1024" height="1024"></canvas></section>
-</main>
-
+</div>
 <script>
-const c=document.getElementById('canvas'),ctx=c.getContext('2d');
-let img=null;
+const c=document.getElementById('canvas'),ctx=c.getContext('2d');let img=null;
 const $=id=>document.getElementById(id);
 
-function fitContain(im,x,y,w,h,pad=16){
- const r=Math.min((w-pad*2)/im.width,(h-pad*2)/im.height);
- const nw=im.width*r,nh=im.height*r;
+function contain(im,x,y,w,h,p=18){
+ const r=Math.min((w-p*2)/im.width,(h-p*2)/im.height),nw=im.width*r,nh=im.height*r;
  ctx.drawImage(im,x+(w-nw)/2,y+(h-nh)/2,nw,nh);
 }
-function corner(x,y,flipX=1,flipY=1){
- ctx.save();ctx.translate(x,y);ctx.scale(flipX,flipY);
- ctx.strokeStyle='#e2aa25';ctx.lineWidth=4;ctx.beginPath();
- ctx.moveTo(0,90);ctx.quadraticCurveTo(8,35,58,10);ctx.quadraticCurveTo(82,0,90,0);
- ctx.moveTo(10,78);ctx.quadraticCurveTo(25,48,50,40);ctx.quadraticCurveTo(72,32,78,10);
- ctx.stroke();
- ctx.lineWidth=2;ctx.beginPath();ctx.arc(28,25,13,0,Math.PI*2);ctx.stroke();
- ctx.restore();
+function ornateCorner(x,y,sx,sy){
+ ctx.save();ctx.translate(x,y);ctx.scale(sx,sy);ctx.strokeStyle='#e5ad27';ctx.lineWidth=4;
+ ctx.beginPath();ctx.moveTo(0,90);ctx.bezierCurveTo(6,48,28,18,88,0);ctx.stroke();
+ ctx.lineWidth=2;ctx.beginPath();ctx.arc(28,28,13,0,Math.PI*2);ctx.stroke();
+ ctx.beginPath();ctx.moveTo(16,70);ctx.quadraticCurveTo(45,50,58,17);ctx.stroke();ctx.restore();
 }
-function badge(cx,cy,top,bottom,symbol){
- ctx.strokeStyle='#d7a020';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy,39,0,Math.PI*2);ctx.stroke();
- ctx.fillStyle='#e8b12f';ctx.font='bold 25px Georgia';ctx.fillText(symbol,cx,cy+8);
- ctx.fillStyle='#eee3cb';ctx.font='bold 14px Georgia';ctx.fillText(top,cx,cy+60);ctx.fillText(bottom,cx,cy+79);
- ctx.strokeStyle='#8b6417';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(cx-50,cy+96);ctx.lineTo(cx+50,cy+96);ctx.stroke();
+function iconBadge(cx,cy,a,b,s){
+ ctx.strokeStyle='#dca526';ctx.lineWidth=2;ctx.beginPath();ctx.arc(cx,cy,38,0,Math.PI*2);ctx.stroke();
+ ctx.fillStyle='#edb52f';ctx.font='bold 25px Georgia';ctx.fillText(s,cx,cy+8);
+ ctx.fillStyle='#eee1c5';ctx.font='bold 14px Georgia';ctx.fillText(a,cx,cy+59);ctx.fillText(b,cx,cy+78);
+ ctx.strokeStyle='#775313';ctx.beginPath();ctx.moveTo(cx-48,cy+95);ctx.lineTo(cx+48,cy+95);ctx.stroke();
+}
+function titleLines(name){
+ let words=name.split(/\s+/),lines=[],line='';
+ ctx.font='bold 57px Georgia';
+ for(const w of words){let t=line?line+' '+w:w;if(ctx.measureText(t).width>620&&line){lines.push(line);line=w}else line=t}
+ if(line)lines.push(line);return lines;
 }
 function draw(){
- const name=($('name').value.trim()||'PRODUCT NAME').toUpperCase();
- const weight=$('weight').value.trim();
- const price=$('price').value.trim();
+ const name=($('name').value.trim()||'PRODUCT NAME').toUpperCase(),weight=$('weight').value.trim(),price=$('price').value.trim();
+ let bg=ctx.createRadialGradient(620,470,30,520,520,760);
+ bg.addColorStop(0,'#1d1209');bg.addColorStop(.42,'#0c0805');bg.addColorStop(1,'#020202');
+ ctx.fillStyle=bg;ctx.fillRect(0,0,1024,1024);
 
- // luxurious near-black background
- let g=ctx.createRadialGradient(650,420,40,500,520,760);
- g.addColorStop(0,'#21150b');g.addColorStop(.45,'#0d0906');g.addColorStop(1,'#030303');
- ctx.fillStyle=g;ctx.fillRect(0,0,1024,1024);
-
- // double frame
- ctx.strokeStyle='#e0a824';ctx.lineWidth=5;ctx.strokeRect(15,15,994,994);
- ctx.strokeStyle='#5e4212';ctx.lineWidth=2;ctx.strokeRect(30,30,964,964);
- ctx.strokeStyle='#9b711b';ctx.lineWidth=1;ctx.strokeRect(40,40,944,944);
- corner(25,25,1,1);corner(999,25,-1,1);corner(25,999,1,-1);corner(999,999,-1,-1);
+ // exact-style multi-line luxury frame
+ ctx.strokeStyle='#e2a824';ctx.lineWidth=5;ctx.strokeRect(15,15,994,994);
+ ctx.strokeStyle='#775214';ctx.lineWidth=2;ctx.strokeRect(29,29,966,966);
+ ctx.strokeStyle='#bd8a1e';ctx.lineWidth=1;ctx.strokeRect(39,39,946,946);
+ ornateCorner(22,22,1,1);ornateCorner(1002,22,-1,1);ornateCorner(22,1002,1,-1);ornateCorner(1002,1002,-1,-1);
 
  ctx.textAlign='center';
- // premium logo emblem
- ctx.strokeStyle='#d9a324';ctx.lineWidth=2;ctx.beginPath();ctx.arc(512,102,75,0,Math.PI*2);ctx.stroke();
- ctx.fillStyle='#f2bf4b';ctx.font='30px Georgia';ctx.fillText('🪔',512,68);
- ctx.fillStyle='#f0bd43';ctx.font='bold 42px Georgia';ctx.shadowColor='#9b6810';ctx.shadowBlur=8;ctx.fillText('Jyoti',512,112);
- ctx.shadowBlur=0;ctx.fillStyle='#e7d5ac';ctx.font='bold 22px Georgia';ctx.fillText('Gruh Udhyog',512,138);
- ctx.fillStyle='#c9b895';ctx.font='17px Georgia';ctx.fillText('• RAJKOT • GUJARAT •',512,178);
- ctx.fillStyle='#eadfc9';ctx.font='16px Georgia';ctx.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,207);
+ // logo emblem
+ ctx.strokeStyle='#dba626';ctx.lineWidth=2;ctx.beginPath();ctx.arc(512,105,76,0,Math.PI*2);ctx.stroke();
+ ctx.fillStyle='#f2bd42';ctx.font='29px Georgia';ctx.fillText('🪔',512,67);
+ ctx.fillStyle='#f0bc40';ctx.font='bold 44px Georgia';ctx.shadowColor='#9a640c';ctx.shadowBlur=8;ctx.fillText('Jyoti',512,112);ctx.shadowBlur=0;
+ ctx.fillStyle='#e9d7ad';ctx.font='bold 22px Georgia';ctx.fillText('Gruh Udhyog',512,140);
+ ctx.fillStyle='#cbb994';ctx.font='17px Georgia';ctx.fillText('• RAJKOT • GUJARAT •',512,177);
+ ctx.fillStyle='#eee2c9';ctx.font='16px Georgia';ctx.fillText('✦  TRADITIONAL TASTE, MADE WITH LOVE  ✦',512,206);
 
- // left rail
- badge(94,275,'100%','NATURAL','◉');
- badge(94,390,'PREMIUM','QUALITY','✓');
- badge(94,505,'FINE','GRAINS','✦');
- badge(94,620,'NO ADDED','PRESERVATIVES','◇');
- badge(94,735,'MADE WITH','LOVE & CARE','♡');
+ // side badges
+ iconBadge(92,270,'100%','NATURAL','◉');
+ iconBadge(92,385,'PREMIUM','QUALITY','✓');
+ iconBadge(92,500,'FINE','GRAINS','✦');
+ iconBadge(92,615,'NO ADDED','PRESERVATIVES','◇');
+ iconBadge(92,730,'MADE WITH','LOVE & CARE','♡');
 
- // title plaque
- const tx=250,ty=245,tw=700,th=190;
- ctx.strokeStyle='#dba426';ctx.lineWidth=4;ctx.strokeRect(tx,ty,tw,th);
- ctx.strokeStyle='#785615';ctx.lineWidth=2;ctx.strokeRect(tx+12,ty+12,tw-24,th-24);
- ctx.fillStyle='#f6dfa5';
- ctx.shadowColor='#8d5c0b';ctx.shadowBlur=7;
- ctx.font=name.length>18?'bold 47px Georgia':'bold 60px Georgia';
- if(name.length>22)ctx.font='bold 40px Georgia';
- // split long names into two lines
- if(name.length>16){
-   let words=name.split(' '),line='',lines=[];
-   words.forEach(w=>{let t=line?line+' '+w:w;if(ctx.measureText(t).width>610&&line){lines.push(line);line=w}else line=t});if(line)lines.push(line);
-   const start=ty+78-(lines.length-1)*27;
-   lines.forEach((ln,i)=>ctx.fillText(ln,600,start+i*60));
- }else ctx.fillText(name,600,350);
+ // title panel
+ const px=250,py=246,pw=700,ph=190;
+ ctx.strokeStyle='#dca526';ctx.lineWidth=4;ctx.strokeRect(px,py,pw,ph);
+ ctx.strokeStyle='#704d13';ctx.lineWidth=2;ctx.strokeRect(px+12,py+12,pw-24,ph-24);
+ ctx.fillStyle='#f6d98e';ctx.shadowColor='#8e5e0c';ctx.shadowBlur=8;
+ let lines=titleLines(name);
+ if(lines.length===1){ctx.font=name.length>18?'bold 48px Georgia':'bold 59px Georgia';ctx.fillText(lines[0],600,355)}
+ else {ctx.font=lines.length>2?'bold 35px Georgia':'bold 47px Georgia';let sy=335-(lines.length-1)*27;lines.forEach((l,i)=>ctx.fillText(l,600,sy+i*58))}
  ctx.shadowBlur=0;
 
- // ribbon
- ctx.fillStyle='#dca323';ctx.beginPath();ctx.moveTo(350,414);ctx.lineTo(840,414);ctx.lineTo(816,468);ctx.lineTo(374,468);ctx.closePath();ctx.fill();
- ctx.fillStyle='#170d04';ctx.font='bold 22px Georgia';ctx.fillText('CRISPY  •  TASTY  •  PREMIUM',595,449);
+ // premium ribbon
+ ctx.fillStyle='#dca528';ctx.beginPath();ctx.moveTo(340,414);ctx.lineTo(850,414);ctx.lineTo(820,468);ctx.lineTo(370,468);ctx.closePath();ctx.fill();
+ ctx.fillStyle='#1a0e04';ctx.font='bold 22px Georgia';ctx.fillText('CRISPY  •  TASTY  •  PREMIUM',595,449);
 
- // image frame
- ctx.fillStyle='#070504';ctx.strokeStyle='#9b711b';ctx.lineWidth=3;ctx.fillRect(250,490,700,410);ctx.strokeRect(250,490,700,410);
- ctx.strokeStyle='#3f2b0c';ctx.lineWidth=1;ctx.strokeRect(263,503,674,384);
- if(img) fitContain(img,263,503,674,384,18);
- else{
-   ctx.fillStyle='#9d7b3d';ctx.font='20px Arial';ctx.fillText('UPLOAD PRODUCT IMAGE',600,700);
+ // image area
+ ctx.fillStyle='#060403';ctx.fillRect(250,490,700,410);
+ ctx.strokeStyle='#b78119';ctx.lineWidth=3;ctx.strokeRect(250,490,700,410);
+ ctx.strokeStyle='#4a330c';ctx.lineWidth=1;ctx.strokeRect(263,503,674,384);
+ if(img)contain(img,263,503,674,384,20);else{
+   ctx.fillStyle='#a88645';ctx.font='20px Arial';ctx.fillText('UPLOAD PRODUCT IMAGE',600,700);
  }
 
- // optional price
+ // price badge
  if(price){
-   ctx.fillStyle='#080604';ctx.strokeStyle='#e1ad2b';ctx.lineWidth=4;
-   ctx.beginPath();ctx.arc(870,842,73,0,Math.PI*2);ctx.fill();ctx.stroke();
-   ctx.strokeStyle='#755114';ctx.lineWidth=1;ctx.beginPath();ctx.arc(870,842,62,0,Math.PI*2);ctx.stroke();
-   ctx.fillStyle='#dca72c';ctx.font='bold 17px Georgia';ctx.fillText('PRICE',870,820);
-   ctx.fillStyle='#f4d68e';ctx.font='bold 37px Georgia';ctx.fillText(price,870,862);
+   ctx.fillStyle='#070504';ctx.strokeStyle='#e0a72a';ctx.lineWidth=4;ctx.beginPath();ctx.arc(870,835,75,0,Math.PI*2);ctx.fill();ctx.stroke();
+   ctx.strokeStyle='#735013';ctx.lineWidth=1;ctx.beginPath();ctx.arc(870,835,63,0,Math.PI*2);ctx.stroke();
+   ctx.fillStyle='#e4b238';ctx.font='bold 17px Georgia';ctx.fillText('PRICE',870,812);
+   ctx.fillStyle='#f5d98e';ctx.font='bold 38px Georgia';ctx.fillText(price,870,856);
  }
  if(weight){
-   ctx.fillStyle='#e7bc56';ctx.font='bold 20px Georgia';ctx.fillText(weight,600,932);
+   ctx.fillStyle='#edbf52';ctx.font='bold 22px Georgia';ctx.fillText(weight,600,932);
  }
  // footer
- ctx.strokeStyle='#8e6417';ctx.lineWidth=2;ctx.strokeRect(160,952,720,38);
- ctx.fillStyle='#e8dcc2';ctx.font='15px Georgia';ctx.fillText('RAJKOT, GUJARAT   |   +91 9712149344   |   ORDER ON WHATSAPP',520,978);
+ ctx.strokeStyle='#9c721a';ctx.lineWidth=2;ctx.strokeRect(160,953,720,36);
+ ctx.fillStyle='#e7dcc4';ctx.font='15px Georgia';ctx.fillText('RAJKOT, GUJARAT   |   +91 9712149344   |   ORDER ON WHATSAPP',520,977);
 }
 $('photo').addEventListener('change',e=>{
- const f=e.target.files[0];if(!f)return;
- const r=new FileReader();r.onload=()=>{img=new Image();img.onload=draw;img.src=r.result};r.readAsDataURL(f);
+ const f=e.target.files[0];if(!f)return;const r=new FileReader();
+ r.onload=()=>{img=new Image();img.onload=draw;img.src=r.result};r.readAsDataURL(f);
 });
 document.querySelectorAll('input').forEach(i=>i.addEventListener('input',draw));
 $('make').onclick=()=>{draw();$('status').textContent='Premium poster ready ✓'};
-function blob(q){return new Promise(r=>c.toBlob(r,'image/webp',q))}
+function getBlob(q){return new Promise(r=>c.toBlob(r,'image/webp',q))}
 async function optimize(){
- let best=await blob(.82);
- for(let q of [.72,.62,.55,.48,.42,.36,.30]){
-   if(best.size<=50000)break;
-   const b=await blob(q);if(b.size<best.size)best=b;
- }
+ let best=await getBlob(.82);
+ for(const q of [.72,.64,.56,.50,.44,.38,.32]){if(best.size<=50000)break;const b=await getBlob(q);if(b.size<best.size)best=b}
  return best;
 }
 $('download').onclick=async()=>{
- draw();$('status').textContent='Optimizing WEBP…';
- const b=await optimize();
+ draw();$('status').textContent='Optimizing WEBP…';const b=await optimize();
  const a=document.createElement('a');a.href=URL.createObjectURL(b);
- a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';
- a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200);
- $('status').textContent=`Downloaded ✓ ${(b.size/1024).toFixed(1)} KB`;
+ a.download=(($('name').value||'jyoti-poster').replace(/[^a-z0-9]+/gi,'-').toLowerCase())+'.webp';a.click();
+ setTimeout(()=>URL.revokeObjectURL(a.href),1200);$('status').textContent=`Downloaded ✓ ${(b.size/1024).toFixed(1)} KB`;
 };
 draw();
 </script>
